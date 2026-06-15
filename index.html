@@ -1,1 +1,256 @@
-iiii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strudelify</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      gap: 32px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #1db954;
+    }
+
+    /* --- Player --- */
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 500px;
+    }
+    .track-info { text-align: center; }
+    .track-title { font-size: 1.1rem; color: #e0e0e0; }
+    .track-meta {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .track-meta span { color: #1db954; }
+    .controls { display: flex; gap: 12px; align-items: center; }
+    button {
+      background: #1db954;
+      color: #000;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button:hover { background: #1ed760; transform: scale(1.05); }
+    button:active { transform: scale(0.95); }
+    button:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+    button.stop {
+      background: transparent;
+      border: 2px solid #888;
+      color: #888;
+    }
+    button.stop:hover { border-color: #e0e0e0; color: #e0e0e0; }
+    .status {
+      font-size: 0.75rem;
+      color: #555;
+      height: 1em;
+    }
+    .status.active { color: #1db954; }
+    .status.loading { color: #f59e0b; }
+
+    /* --- Track List --- */
+    .track-list {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .track-list-header {
+      font-size: 0.75rem;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 8px 12px 4px;
+    }
+    .track-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .track-item:hover { background: #1a1a1a; }
+    .track-item.active { background: #1a2e1a; }
+    .track-num {
+      font-size: 0.8rem;
+      color: #555;
+      width: 24px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .track-item.active .track-num { color: #1db954; }
+    .track-details { flex: 1; min-width: 0; }
+    .track-details-title {
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .track-details-meta {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* --- Strudel engine (hidden) --- */
+    .strudel-engine {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Strudelify</h1>
+
+  <div class="player">
+    <div class="track-info">
+      <div class="track-title" id="track-title">&mdash;</div>
+      <div class="track-meta" id="track-meta"></div>
+    </div>
+    <div class="controls">
+      <button id="play" title="Play" disabled>&#9654;</button>
+      <button id="stop" class="stop" title="Stop" disabled>&#9632;</button>
+    </div>
+    <span id="status" class="status loading">Loading engine...</span>
+  </div>
+
+  <div class="track-list" id="track-list">
+    <div class="track-list-header">Tracks</div>
+  </div>
+
+  <!-- Hidden Strudel REPL engine -->
+  <div class="strudel-engine">
+    <strudel-editor id="repl"><!-- placeholder --></strudel-editor>
+  </div>
+
+  <script src="https://unpkg.com/@strudel/repl@latest"></script>
+  <script src="songs.js"></script>
+  <script>
+    const repl      = document.getElementById('repl');
+    const statusEl  = document.getElementById('status');
+    const playBtn   = document.getElementById('play');
+    const stopBtn   = document.getElementById('stop');
+    const titleEl   = document.getElementById('track-title');
+    const metaEl    = document.getElementById('track-meta');
+    const listEl    = document.getElementById('track-list');
+
+    let currentSong = null;
+    let isPlaying = false;
+
+    // --- Build track list ---
+    SONGS.forEach((song, i) => {
+      const item = document.createElement('div');
+      item.className = 'track-item';
+      item.dataset.id = song.id;
+      item.innerHTML = `
+        <span class="track-num">${i + 1}</span>
+        <div class="track-details">
+          <div class="track-details-title">${song.title}</div>
+          <div class="track-details-meta">${song.author} &middot; ${song.genre}</div>
+        </div>`;
+      item.addEventListener('click', () => loadSong(song));
+      listEl.appendChild(item);
+    });
+
+    // --- Decode Strudel code from the strudel.cc share URL ---
+    function decodeStrudelCode(url) {
+      const hash = url.split('#')[1];
+      if (!hash) return '';
+      return atob(decodeURIComponent(hash));
+    }
+
+    // --- Load a song into the REPL ---
+    function loadSong(song) {
+      // Stop current playback
+      if (isPlaying && repl.editor?.repl) {
+        repl.editor.repl.stop();
+        isPlaying = false;
+      }
+
+      currentSong = song;
+      titleEl.textContent = song.title;
+      metaEl.innerHTML = `<span>${song.author}</span> &middot; <span>${song.genre}</span>`;
+
+      // Update active state in track list
+      listEl.querySelectorAll('.track-item').forEach(el => {
+        el.classList.toggle('active', el.dataset.id === song.id);
+      });
+
+      // Decode code from the URL and load it into the editor
+      const code = decodeStrudelCode(song.strudelUrl);
+      repl.editor.setCode(code);
+
+      statusEl.textContent = 'Ready';
+      statusEl.className = 'status';
+      playBtn.disabled = false;
+      stopBtn.disabled = false;
+    }
+
+    // --- Play / Stop ---
+    playBtn.addEventListener('click', () => {
+      if (!repl.editor?.repl || !currentSong) return;
+      const code = decodeStrudelCode(currentSong.strudelUrl);
+      repl.editor.repl.evaluate(code);
+      isPlaying = true;
+      statusEl.textContent = 'Playing';
+      statusEl.className = 'status active';
+    });
+
+    stopBtn.addEventListener('click', () => {
+      if (!repl.editor?.repl) return;
+      repl.editor.repl.stop();
+      isPlaying = false;
+      statusEl.textContent = 'Stopped';
+      statusEl.className = 'status';
+    });
+
+    // --- Wait for engine, then load first song ---
+    function waitForEngine(retries = 50) {
+      if (repl.editor?.repl) {
+        loadSong(SONGS[0]);
+        return;
+      }
+      if (retries <= 0) {
+        statusEl.textContent = 'Engine failed to load';
+        return;
+      }
+      setTimeout(() => waitForEngine(retries - 1), 200);
+    }
+    waitForEngine();
+  </script>
+</body>
+</html>
