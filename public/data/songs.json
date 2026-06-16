@@ -1,0 +1,66 @@
+{
+  "range": "Sheet1!A1:J500",
+  "majorDimension": "ROWS",
+  "values": [
+    [
+      "strudel-template-industrial-0001",
+      "Industrial Template 0001",
+      "Zero Hour",
+      "Industrial",
+      "industrial, loop, electronic, techno",
+      "",
+      "https://i.imgur.com/t3Hwqzz.jpeg",
+      "Some description for the industrial template.",
+      "Jun 15th, 2026",
+      "https://strudel.cc/#c3RhY2soCiAgbm90ZSgiW2UxIGUxIGUyIGUxXSBbZjEgZTEgfiBlMV0gW2UxIGUxIGUyIGUxXSBbZzEgZjEgZDEgfl0iKQogICAgLnMoInNhdyIpCiAgICAubHBmKHNpbmUucmFuZ2UoMTAsIDIwMDApLnNsb3coOCkpCiAgICAubHBxKDMpCiAgICAuZGlzdChzbGlkZXIoMC44LDAsMywwLjIpKQogICAgLmNydXNoKDQpCiAgICAuYW1wKDAuNCkKICAgIC5kZWxheSgwLjIpCiAgICAuZ2FpbigwLjgpLAogICAgCiAgcygiYmQ6NCB%2BIGJkOjQgW34gYmQ6NF0iKQogICAgLmRpc3QoMC44KQogICAgLmFtcCgxLjIpCiAgICAuZ2FpbigwLjUpLAogICAgCiAgcygifiBzZDo1IH4gc2Q6NSIpCiAgICAuZGlzdCgxLjUpCiAgICAuY3J1c2goMykKICAgIC5hbXAoMS4zKQogICAgLmdhaW4oMC41KSwKICAgIAogIHMoImhoKDUsOCkiKQogICAgLmZhc3QoMikKICAgIC5wYW4ocmFuZCkgCiAgICAuYW1wKDAuNikKICAgIC5nYWluKDAuNSkKKS5jcG0oMTA1LzQp"
+    ],
+    [
+      "blue-monday-by-lewis",
+      "Blue Moon by New Order",
+      "Lewis",
+      "Synthpop",
+      "synthpop, song, electronic, 90s",
+      "",
+      "https://i.imgur.com/u7Utl6l.jpeg",
+      "Blue Monday by New Order.",
+      "Jun 15th, 2026",
+      "https://strudel.cc/#CnNldGNwbSgxMzAvNCkKIApjb25zdCBraWNrMSA9IHNvdW5kKCI8W2JkIGJkIFtiZCo0XSBbYmQqNF1dIFtiZCo0XT4iKS5iYW5rKCJsaW5uIikuZGVjYXkoMC4xNSkKY29uc3Qga2ljazIgPSBzb3VuZCgiW2JkKjRdIikuYmFuaygibGlubiIpLmRlY2F5KDAuMTUpCgpjb25zdCBoYXRzMSA9IHNvdW5kKCJbb2ggb2gqMl0qNCIpLmJhbmsoImRteCIpLmRlY2F5KDAuMSkuZ2FpbigwLjEyKQpjb25zdCBoYXRzMiA9IHNvdW5kKCJbLSBvaF0qNCIpLmJhbmsoImRteCIpLmRlY2F5KDAuMikuc3VzdGFpbigwLjEpLmdhaW4oMC4xMikKCmNvbnN0IHNuYXJlID0gc3RhY2soCiAgc291bmQoIlstIHNkXSoyIikuYmFuaygibGlubiIpLmdhaW4oMC41KSwKICBzb3VuZCgiWy0gY3BdKjIiKS5iYW5rKCJsaW5uIikuZ2FpbigwLjEpCikKCmNvbnN0IGRydW1zMSA9IHN0YWNrKGtpY2sxLGhhdHMxLHNuYXJlKQpjb25zdCBkcnVtczIgPSBzdGFjayhraWNrMixoYXRzMixzbmFyZSkKY29uc3QgZHJ1bXMzID0gc3RhY2soCiAgc291bmQoImJkIGJkIGJkIGJkIC0iKS5iYW5rKCJsaW5uIikuZGVjYXkoMC4xNSksCiAgc291bmQoIm9oIG9oIG9oIG9oIC0iKS5iYW5rKCJkbXgiKS5kZWNheSgwLjIpLnN1c3RhaW4oMC4xKS5nYWluKDAuMikKKQoKY29uc3QgYmFzczEgPSBzdGFjaygKICBub3RlKCI8PFtmMSBmMioyXSoyIFtnMSBnMioyXSoyPiBbYzEgYzIqMl0qMiBbZDEgZDIqMl0qMiBbZDEgZDIqMl0qMj4qMiIpLAopLnNvdW5kKCI8c2luZSwgZ21fc3ludGhfYmFzc18xPiIpLmRlY2F5KDAuMikuc3VzdGFpbigwLjEpCgpjb25zdCBiYXNzMiA9IHN0YWNrKAogIG5vdGUoIjw8W2YxIGYyXSoyIFtnMSBnMl0qMj4gW2MxIGMyXSoyIFtkMSBkMl0qMiBbZDEgZDJdKjI%2BKjIiKSwKKS5zb3VuZCgiPHNpbmUsIGdtX3N5bnRoX2Jhc3NfMT4iKS5kZWNheSgwLjIpLnN1c3RhaW4oMC40KQoKCmNvbnN0IHN5bnRoID0gc3RhY2soCiAgbigiPFtbMiB%2BXSBbMiB%2BXSAyIDNdIFtbMyB%2BXSBbMyB%2BXSAzIDNdPkA0IFstMSB%2BXSAtMSAtMSBbMCB%2BXSAwIDAgWzAgfl0gMCAwIFswIH5dIDAgMCIpLAopLnNvdW5kKCI8Z21fbGVhZF8yX3Nhd3Rvb3RoPiIpLnNsb3coMikuc2NhbGUoImQ0Om1pbm9yIikuYXR0YWNrKDAuMDUpLmhwZigiPDEwMDAgMjAwMD4qMTIiKS5nYWluKCIwLjQiKQoKc3RhY2soCiAgYXJyYW5nZShbMTYsa2ljazFdLFsxNixkcnVtczFdLFsyLGRydW1zM10sWzE2LGRydW1zMl0sWzEsc2lsZW5jZV0pLnJvb20oMC4xKSwKICBhcnJhbmdlKFs4LHNpbGVuY2VdLFsyNCxzeW50aF0sWzE5LHNpbGVuY2VdKS5yb29tKDAuMDUpLAogIGFycmFuZ2UoWzE2LHNpbGVuY2VdLFsxNixiYXNzMV0sWzIsc2lsZW5jZV0sWzE2LGJhc3MyXSxbMSxzaWxlbmNlXSkKICApLl9waWFub3JvbGwoKQ%3D%3D"
+    ],
+    [
+      "strudel-advanced-trance-by-switch-angel-0001",
+      "Advenced Trance",
+      "Switch Angel",
+      "Trance",
+      "trance, electronic, techno, loop",
+      "",
+      "https://i.imgur.com/ozJ5J2H.jpeg",
+      "Some description for the advanced trance track.",
+      "Jun 15th, 2026",
+      "https://strudel.cc/#Ly8gc2FtcGxlcygnaHR0cDovL2xvY2FsaG9zdDo1NDMyJykKc2V0Q3BtKDE0MC80KQovLyBMRVQgVVMgVFJBTkNFIFcvU1dJVENIIEFOR0VMCiQ6IHMoImJkOjIhNCIpCgokOiBuKCI8M0AzIDQgNSBAMyA2PioyIi5hZGQoIlstMTQsLTIxXSIpKS5zY2FsZSgiZzptaW5vciIpCiAgLnMoInN1cGVyc2F3IikKICAuc2VnKDE2KQoKJDogbigiMEAyIDwtNyBbLTUgLTJdPkAzIDwwIC0zIDIgMT5AMyIuYWRkKDcpCiAgLmFkZCgiPDUgNCAwIDwwIDI%2BPiIpCiAgKQogIC5zY2FsZSgiZzptaW5vciIpCiAgLnMoInN1cGVyc2F3IikKICAuZGVsYXkoLjcpLnBhbihyYW5kKQoKJDogcygicHVsc2UhMTYiKS5kZWMoLjEpLmZtKHRpbWUpLmZtaCh0aW1lKS5vKDQpCgokOiBzKCJzaW46NiIpLm5vdGUoImUyIikuc2NydWIocmFuZC5zZWcoMTYpLnJpYig0NiwyKSkKICAuZGVsYXkoLjgpCiAgLm8oNSk%3D"
+    ],
+    [
+      "strudel-simple-techno-by-char-stiles",
+      "Simple Techno",
+      "Char Stiles",
+      "Techno",
+      "chill, electronic, techno, loop",
+      "",
+      "https://i.imgur.com/h0zrRAO.jpeg",
+      "Some description for the simple techno track.",
+      "Jun 15th, 2026",
+      "https://strudel.cc/#CnZhciBjcG0gPSAyODsKc3RhY2soCiAgc291bmQoImJkITQiKQogICAgLmJhbmsoIlJvbGFuZFRSOTA5IikKICAgIC5nYWluKDAuMzUpCiAgICAucm9vbSgwLjA1KQogICwKICAKICBub3RlKGAKICBbPGcyQDAuNSBnMkAwLjUgZzJAMC41IGcyQDAuNT4gZzNdCiAgWyBkIzJAMC41IGQjMkAwLjUgZCMyQDAuNSBkIzJAMC41IGQjMkAwLjUgZCMyQDAuNSBdCiAgW2MyQDAuNSBjMkAwLjUgYzJAMC41IF0KICBbZCMyQDAuNSBnIzFAMC41IGMyIGMyXQogIGApCiAgICAuc2xvdyg0KQogICAgLnNvdW5kKCJzYXd0b290aCIpCiAgICAuZ2FpbigwLjM1KQogICAgLmNsaXAoMSkKICAgIC5ldWNsaWRSb3QoNSwxNiwyKQogICAgLmF0dGFjaygwLjIpCiAgICAucmVsZWFzZSgwLjAxKQogICAgLnJvb20oMC45MikKICAsCiAgCiAgc291bmQoIn4gaGggfiBbaGggaGhdIH4gaGggfiBoaCIpCiAgICAuYmFuaygiUm9sYW5kVFI5MDkiKQogICAgLmdhaW4oMC4wOCkKICAgIC5jcnVzaCg1KQogICwKICAKICBzb3VuZCgifiBzZCB%2BIFtzZCB%2BIH4gc2RdIikKICAgIC5iYW5rKCJSb2xhbmRUUjkwOSIpCiAgICAuZ2FpbigiMC4xNSAwLjE1IDAuMTUgMC4xNSAwLjA5IikKICAsCiAgCikuY3BtKGNwbSk%3D"
+    ],
+    [
+      "strudel-simple-trance-by-switch-angel",
+      "Simple Trance",
+      "Switch Angel",
+      "Trance",
+      "trance, electronic, techno, loop",
+      "",
+      "https://i.imgur.com/ozJ5J2H.jpeg",
+      "Some description for the simple trance track.",
+      "Jun 15th, 2026",
+      "https://strudel.cc/#CnNldENwbSgxNDQvNCkKJDogcygiYmQ6MiE0IikuZGVjKC4zKS5kdWNrKCIzOjQ6NSIpLmR1Y2thdHRhY2soLjE2KQogIC5kdWNrZGVwdGgoLjgpCgokOiBzKCJ3aGl0ZSExNiIpLmRlYyh0cmkucmFuZ2UoMC4wNSwuMTIpLmZhc3QoNCkpLmdhaW4oLjMpCgokOiBuKCI8MCAwIDAgMCAyIDQgMCA3IDg%2BKjE2Iikuc3ViKC03KS5yaWIoMCw0KQogIC5zKCJzYXd0b290aCIpLnNlZygxNikubyg0KS5kaW9kZSgxKQogIC5kZWxheShzbGlkZXIoMC4xMTcpKS5wYW4ocmFuZCk%3D"
+    ]
+  ]
+}

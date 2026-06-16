@@ -33,7 +33,7 @@ function App() {
   const [selectedSong, setSelectedSong] = useState(null)
 
   useEffect(() => {
-    fetch('/songs.json')
+    fetch('data/songs.json')
       .then(res => res.json())
       .then(data => {
         const parsed = data.values.map(parseSongRow)
