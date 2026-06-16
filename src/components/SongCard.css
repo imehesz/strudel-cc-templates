@@ -1,0 +1,152 @@
+.song-card {
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  padding: 14px;
+  transition: background var(--transition);
+  position: relative;
+  cursor: default;
+}
+
+.song-card:hover {
+  background: var(--bg-card-hover);
+}
+
+.song-card-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.song-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.song-card:hover .song-card-cover img {
+  transform: scale(1.02);
+}
+
+/* Single toggle button — always visible on cover */
+.play-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: var(--accent);
+  color: #000;
+  z-index: 2;
+}
+
+.play-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.06);
+}
+
+.play-btn.playing {
+  background: var(--text-primary);
+  color: #000;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4); }
+  50% { box-shadow: 0 4px 24px rgba(29, 185, 84, 0.8); }
+}
+
+/* Info */
+.song-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.song-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.song-card-title:hover {
+  text-decoration: underline;
+}
+
+.song-card-author {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Actions row: heart + strudel link — always visible */
+.song-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.save-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.save-btn:hover {
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+.save-btn.saved {
+  color: var(--accent);
+}
+
+.strudel-link-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.strudel-link-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  transform: scale(1.1);
+}
+
+.hash-icon {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}

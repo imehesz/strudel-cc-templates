@@ -1,0 +1,262 @@
+.song-detail {
+  padding: 0 32px 120px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  transition: all var(--transition);
+}
+
+.back-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.detail-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.detail-cover {
+  flex-shrink: 0;
+  width: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+.detail-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.detail-info {
+  flex: 1;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.detail-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.detail-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.detail-author {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+}
+
+.meta-value {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.detail-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.detail-tag {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-play-btn,
+.detail-save-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.detail-play-btn {
+  background: var(--accent);
+  color: #000;
+}
+
+.detail-play-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.03);
+}
+
+.detail-play-btn.playing {
+  background: var(--text-primary);
+  color: #000;
+  animation: pulseDetail 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseDetail {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(29, 185, 84, 0); }
+}
+
+.detail-save-btn {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.detail-save-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  transform: scale(1.03);
+}
+
+.detail-save-btn.saved {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.detail-strudel-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: all var(--transition);
+}
+
+.detail-strudel-link:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  transform: scale(1.03);
+}
+
+.detail-strudel-link .hash-icon {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detail-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-cover {
+    width: 260px;
+  }
+
+  .detail-info {
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .detail-meta {
+    justify-content: center;
+  }
+
+  .detail-tags {
+    justify-content: center;
+  }
+
+  .detail-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .song-detail {
+    padding: 0 16px 120px;
+  }
+
+  .detail-cover {
+    width: 220px;
+  }
+
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .detail-actions {
+    gap: 8px;
+  }
+
+  .detail-play-btn,
+  .detail-save-btn,
+  .detail-strudel-link {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
