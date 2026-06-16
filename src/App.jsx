@@ -80,11 +80,46 @@ function App() {
   const handleSelectSong = (song) => {
     setSelectedSong(song)
     setSidebarOpen(false)
+    window.location.hash = 'listen/' + song.id
   }
 
   const handleBack = () => {
     setSelectedSong(null)
+    window.location.hash = ''
   }
+
+  // On initial load, if the URL has a hash, jump to that song
+  useEffect(() => {
+    if (songs.length === 0) return
+    const hash = window.location.hash.replace(/^#\/?/, '')
+    if (hash.startsWith('listen/')) {
+      const songId = hash.slice('listen/'.length)
+      const song = songs.find(s => s.id === songId)
+      if (song) {
+        setSelectedSong(song)
+        setSidebarOpen(false)
+      }
+    }
+  }, [songs])
+
+  // Listen for browser back/forward
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '')
+      if (hash.startsWith('listen/')) {
+        const songId = hash.slice('listen/'.length)
+        const song = songs.find(s => s.id === songId)
+        if (song) {
+          setSelectedSong(song)
+          setSidebarOpen(false)
+        }
+      } else {
+        setSelectedSong(null)
+      }
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [songs])
 
   const headerTitle = selectedSong
     ? selectedSong.title
